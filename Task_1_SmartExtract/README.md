@@ -198,4 +198,4 @@ GitHub: [kvmkashyap-stack](https://github.com/kvmkashyap-stack)
 
 ---
 
-*Developed as part of the Datheon Python, Generative AI, and LangChain internship tasks.*
+*Developed as part of the Datheon Python, Generative AI, and LangChain internship tasks..*
