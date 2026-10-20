@@ -1,4 +1,3 @@
-
 # Python + Generative AI & LangChain Internship
 
 **Internship Organization:** Datheon  
@@ -33,21 +32,31 @@ SmartExtract is a Python application that uses a generative AI model and LangCha
 
 **Documentation:** [`Task 1 README`](./Task_1_SmartExtract/README.md)
 
-### Task 2 — Document Question Answering with RAG
+### Task 2 — RetrieveAI: Document Question Answering with RAG
 
-**Status:** Planned
+**Status:** Completed
 
-Build a Retrieval-Augmented Generation (RAG) pipeline that loads PDF or text documents, splits them into chunks, generates vector embeddings, and retrieves relevant context to answer user questions.
+RetrieveAI is a Retrieval-Augmented Generation (RAG) application that allows users to upload PDF or text documents and ask questions about their contents. It loads documents, splits them into chunks, generates vector embeddings, stores them in a vector database, and retrieves relevant context to generate answers grounded in the provided documents. The application also provides source citations to help users identify the documents used to answer their questions.
 
-**Planned concepts and technologies:**
-- LangChain document loaders
-- Recursive text splitting
+**Key concepts and technologies:**
+- Python
+- Google Gemini
+- LangChain
+- Retrieval-Augmented Generation (RAG)
+- PDF and text document loaders
+- Recursive text splitting and chunking
 - Vector embeddings
-- ChromaDB or FAISS
+- ChromaDB
 - Context-based question answering
 - Source and page citations
+- Streamlit interactive web application
+- Automated testing with pytest
 
-**Expected outcome:** A working document Q&A application that answers questions using the provided documents.
+**Project folder:** [`Task_2_RetrieveAI/`](./Task_2_RetrieveAI/)
+
+**Documentation:** [`Task 2 README`](./Task_2_RetrieveAI/README.md)
+
+**Expected outcome:** A working document Q&A application that answers user questions using retrieved context from uploaded documents and displays source information.
 
 ### Task 3 — AI Agent with Tools
 
@@ -86,14 +95,23 @@ Create a web interface around a RAG pipeline or AI agent, providing a conversati
 Datheon_Python_-_Generative_AI_-_LangChain_Internship/
 ├── .gitignore
 ├── README.md
-└── Task_1_SmartExtract/
+├── Task_1_SmartExtract/
+│   ├── README.md
+│   ├── main.py
+│   ├── requirements.txt
+│   ├── prompts/
+│   ├── schemas/
+│   ├── tests/
+│   └── output/
+└── Task_2_RetrieveAI/
     ├── README.md
+    ├── app.py
     ├── main.py
     ├── requirements.txt
+    ├── ingestion/
+    ├── retrieval/
     ├── prompts/
-    ├── schemas/
-    ├── tests/
-    └── output/
+    └── tests/
 ```
 
 As additional tasks are completed, their folders and documentation will be added to this repository.
@@ -136,6 +154,22 @@ Run the application:
 
 ```powershell
 python Task_1_SmartExtract/main.py
+```
+
+### Run Task 2 — RetrieveAI
+
+With the virtual environment activated, install the Task 2 dependencies:
+
+```powershell
+python -m pip install -r Task_2_RetrieveAI/requirements.txt
+```
+
+Configure the required API key in a local `.env` file according to the instructions in [`Task_2_RetrieveAI/README.md`](./Task_2_RetrieveAI/README.md).
+
+Run the Streamlit application:
+
+```powershell
+python -m streamlit run Task_2_RetrieveAI/app.py
 ```
 
 For task-specific installation, configuration, execution, and testing instructions, refer to the README inside each task folder.
