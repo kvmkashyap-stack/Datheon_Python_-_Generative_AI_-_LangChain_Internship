@@ -1,0 +1,8 @@
+langchain
+langchain-google-genai
+langchain-community
+ddgs
+python-dotenv
+pytest
+streamlit
+pypdf
