@@ -1,0 +1,10 @@
+langchain
+langchain-community
+langchain-classic
+langchain-chroma
+langchain-google-genai
+pypdf
+python-dotenv
+pytest
+
+streamlit
