@@ -1,4 +1,3 @@
-
 # Python + Generative AI & LangChain Internship
 
 **Internship Organization:** Datheon  
@@ -8,7 +7,7 @@
 
 ## About This Repository
 
-This repository contains the projects developed as part of the Python + Generative AI & LangChain Internship at Datheon. The goal is to build practical, real-world applications using Python, Large Language Models (LLMs), prompt engineering, structured output validation, Retrieval-Augmented Generation (RAG), vector databases, AI agents, and interactive applications.
+This repository contains the projects developed as part of the Python + Generative AI & LangChain Internship at Datheon. The goal is to build practical applications using Python, Large Language Models (LLMs), prompt engineering, structured output validation, Retrieval-Augmented Generation (RAG), vector databases, AI agents, and interactive applications.
 
 Each task is maintained in a separate folder with its own source code, dependencies, tests where applicable, and detailed README documentation.
 
@@ -18,7 +17,7 @@ Each task is maintained in a separate folder with its own source code, dependenc
 
 **Status:** Completed
 
-SmartExtract is a Python application that uses a generative AI model and LangChain to extract structured information from resume text. It validates the generated data using Pydantic and produces JSON output.
+SmartExtract is a Python application that uses a generative AI model and LangChain to extract structured information from resume text. It validates generated data using Pydantic and produces JSON output.
 
 **Key concepts and technologies:**
 - Python
@@ -33,52 +32,55 @@ SmartExtract is a Python application that uses a generative AI model and LangCha
 
 **Documentation:** [`Task 1 README`](./Task_1_SmartExtract/README.md)
 
-### Task 2 — Document Question Answering with RAG
+### Task 2 — RetrieveAI: RAG Document Question Answering
 
-**Status:** Planned
+**Status:** Completed
 
-Build a Retrieval-Augmented Generation (RAG) pipeline that loads PDF or text documents, splits them into chunks, generates vector embeddings, and retrieves relevant context to answer user questions.
+RetrieveAI is a document question-answering application built using Retrieval-Augmented Generation (RAG). Users can upload PDF or TXT documents through a Streamlit interface and ask questions about their contents. The application retrieves relevant document chunks and generates context-grounded answers with source citations.
 
-**Planned concepts and technologies:**
+**Key concepts and technologies:**
+- Python
 - LangChain document loaders
 - Recursive text splitting
-- Vector embeddings
-- ChromaDB or FAISS
-- Context-based question answering
-- Source and page citations
-
-**Expected outcome:** A working document Q&A application that answers questions using the provided documents.
-
-### Task 3 — AI Agent with Tools
-
-**Status:** Planned
-
-Build an AI agent that can select and use tools to solve multi-step tasks, such as web research, mathematical calculations, and reading local files.
-
-**Planned concepts and technologies:**
-- LangChain agents or tool/function calling
-- Tool definitions and execution
-- DuckDuckGo or Tavily search
-- Python calculator
-- Local file reader
-- Agent execution and observation handling
-
-**Expected outcome:** A console-based AI agent that uses appropriate tools to respond to compound queries.
-
-### Task 4 — Interactive Generative AI Web Application
-
-**Status:** Planned
-
-Create a web interface around a RAG pipeline or AI agent, providing a conversational experience with chat history and streamed responses.
-
-**Planned concepts and technologies:**
+- Google Gemini embeddings and generation
+- ChromaDB vector storage
+- Retrieval-Augmented Generation
+- Source citations and PDF page references
 - Streamlit
-- Interactive chat components
-- Session state management
-- Streaming model responses
-- LangChain integration
+- Automated testing with pytest
 
-**Expected outcome:** A locally running web application for interactive conversations with an AI-powered system.
+**Project folder:** [`Task_2_RetrieveAI/`](./Task_2_RetrieveAI/)
+
+**Documentation:** [`Task 2 README`](./Task_2_RetrieveAI/README.md)
+
+### Task 3 — NexusAI: Multi-Tool Autonomous AI Agent
+
+**Status:** Completed
+
+NexusAI is a multi-tool AI agent built using LangChain and Google Gemini. It analyzes user queries, selects appropriate tools, and combines their results to generate useful responses. The project includes a command-line interface and a modern, ChatGPT-style Streamlit chat interface.
+
+**Key concepts and technologies:**
+- Python
+- LangChain agents and tool calling
+- Google Gemini
+- DuckDuckGo web search
+- AST-based mathematical calculator
+- Local document reader
+- PDF, TXT, Markdown, CSV, and JSON file handling
+- Streamlit conversational interface
+- File uploads
+- Automated testing with pytest
+
+**Available tools:**
+- **Web Search:** Retrieves relevant information from the web using DuckDuckGo.
+- **Calculator:** Evaluates supported mathematical expressions using a restricted AST-based implementation.
+- **File Reader:** Reads supported local documents from the configured data directory.
+
+**Project folder:** [`Task_3_NexusAI/`](./Task_3_NexusAI/)
+
+**Documentation:** [`Task 3 README`](./Task_3_NexusAI/README.md)
+
+**How to run:** Navigate to `Task_3_NexusAI/`, install its dependencies, configure the required Gemini API key, and launch the Streamlit interface using `python -m streamlit run app.py`. Refer to the Task 3 README for detailed setup and command-line instructions.
 
 ## Repository Structure
 
@@ -86,17 +88,38 @@ Create a web interface around a RAG pipeline or AI agent, providing a conversati
 Datheon_Python_-_Generative_AI_-_LangChain_Internship/
 ├── .gitignore
 ├── README.md
-└── Task_1_SmartExtract/
+│
+├── Task_1_SmartExtract/
+│   ├── README.md
+│   ├── main.py
+│   ├── requirements.txt
+│   ├── prompts/
+│   ├── schemas/
+│   ├── tests/
+│   └── output/
+│
+├── Task_2_RetrieveAI/
+│   ├── README.md
+│   ├── app.py
+│   ├── main.py
+│   ├── requirements.txt
+│   ├── ingestion/
+│   ├── retrieval/
+│   ├── prompts/
+│   └── tests/
+│
+└── Task_3_NexusAI/
     ├── README.md
+    ├── app.py
     ├── main.py
     ├── requirements.txt
-    ├── prompts/
-    ├── schemas/
-    ├── tests/
-    └── output/
+    ├── agent/
+    ├── tools/
+    ├── data/
+    └── tests/
 ```
 
-As additional tasks are completed, their folders and documentation will be added to this repository.
+The structure above highlights the main files and directories. Refer to each task's folder for its complete implementation.
 
 ## Getting Started
 
@@ -105,6 +128,7 @@ As additional tasks are completed, their folders and documentation will be added
 - Python 3.10 or a compatible version supported by the individual project
 - Git
 - A suitable API key for projects that use hosted language models
+- Internet access for applications that require online model APIs or web search
 
 ### Clone the Repository
 
@@ -138,14 +162,53 @@ Run the application:
 python Task_1_SmartExtract/main.py
 ```
 
+### Run Task 2 — RetrieveAI
+
+From the repository root, install the Task 2 dependencies:
+
+```powershell
+python -m pip install -r Task_2_RetrieveAI/requirements.txt
+```
+
+Configure the required API key according to [`Task_2_RetrieveAI/README.md`](./Task_2_RetrieveAI/README.md).
+
+Launch the Streamlit application:
+
+```powershell
+python -m streamlit run Task_2_RetrieveAI/app.py
+```
+
+### Run Task 3 — NexusAI
+
+From the repository root, install the Task 3 dependencies:
+
+```powershell
+python -m pip install -r Task_3_NexusAI/requirements.txt
+```
+
+Configure the required Gemini API key using the instructions in [`Task_3_NexusAI/README.md`](./Task_3_NexusAI/README.md).
+
+**Launch the Streamlit interface:**
+
+```powershell
+python -m streamlit run Task_3_NexusAI/app.py
+```
+
+**Alternatively, run the command-line agent:**
+
+```powershell
+python Task_3_NexusAI/main.py
+```
+
 For task-specific installation, configuration, execution, and testing instructions, refer to the README inside each task folder.
 
 ## Security and Configuration
 
 - Store API keys and other secrets in local environment variables or an untracked `.env` file.
 - Never commit API keys, passwords, or private credentials.
-- Keep virtual environments and generated files out of version control when appropriate.
+- Keep virtual environments, caches, and unnecessary generated files out of version control.
 - Use synthetic or appropriately anonymized data for demonstrations.
+- Validate file inputs and restrict local file access appropriately.
 
 ## Learning Objectives
 
@@ -156,12 +219,13 @@ Through these projects, the internship aims to develop practical experience with
 - Schema validation and reliable structured outputs
 - Retrieval-Augmented Generation and vector search
 - AI agents and tool calling
+- External tool integration and local file processing
 - Interactive AI application development
 - Software organization, testing, documentation, and Git/GitHub workflows
 
 ## Internship Submission
 
-This repository is intended to serve as the project portfolio for internship evaluation. Each completed task will include its implementation and supporting documentation.
+This repository serves as the project portfolio for internship evaluation. Each completed task includes its implementation and supporting documentation.
 
 **Public repository:**  
 https://github.com/kvmkashyap-stack/Datheon_Python_-_Generative_AI_-_LangChain_Internship
