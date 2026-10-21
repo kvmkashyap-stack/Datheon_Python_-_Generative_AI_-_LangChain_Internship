@@ -237,4 +237,4 @@ https://www.datheon.in/training/catalog/python-generative-ai-langchain-internshi
 
 **Author:** K. V. Maheedhara Kashyap
 
-*Python | Generative AI | LangChain | LLM Applications*
+*Python | Agentic AI | Generative AI | LangChain | LLM Applications*
